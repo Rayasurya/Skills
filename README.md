@@ -18,6 +18,11 @@ Bundled deterministic scans:
 
 See [`feature-cleanup/EXAMPLE.md`](feature-cleanup/EXAMPLE.md) for a real worked run.
 
+### [`delegated-engineering`](delegated-engineering/)
+An operating model for running engineering work as a strong **primary** agent that plans + verifies, with **delegate** agents that execute. Three parts: the plan-and-delegate division of labor, how to write a self-contained delegation kickoff, and how to independently verify a delegate's work — never trusting the "all green" self-report.
+
+**Use it when** deciding who does what, handing a task to a sub-agent, or checking a result before you trust or merge it.
+
 ## Install
 
 ```bash
