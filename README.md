@@ -1,35 +1,23 @@
-# Claude Code Skills
+# Skills
 
-Original [Claude Code](https://claude.com/claude-code) skills by **Raya Surya**.
-
-Skills are reusable, model-invokable workflows. Each lives in its own folder with a `SKILL.md` (instructions + trigger description) and any bundled scripts. Drop a skill folder into your `.claude/skills/` directory and Claude will load it when the work matches its description.
+Reusable workflows an AI coding agent loads on demand. Each folder has a `SKILL.md` — instructions plus a description of when to use it — and any scripts it needs. Drop a folder into your agent's skills directory and it loads when the work matches.
 
 ## Skills
 
-### [`feature-cleanup`](feature-cleanup/)
-A post-feature codebase cleanup review. Runs a senior-engineer maintainability sweep — finds dead/orphaned files, unused dependencies, dead assets, duplicate logic, and tech debt — then produces a safe, **delegatable** cleanup plan. It analyzes only; it never deletes (execution is handed to another agent, gated by a green build + typecheck + tests after every change).
+- **[delegated-engineering](delegated-engineering/)** — Run engineering work as a primary agent that plans and verifies, with delegate agents that execute. Covers the plan/delegate division of labor, writing self-contained delegation kickoffs, and verifying delegated work instead of trusting the report.
 
-**Use it when** you finish a feature, add something new, or before merging a branch.
+- **[feature-cleanup](feature-cleanup/)** — A post-feature maintainability sweep: find dead files, unused dependencies, and dead assets, then produce a safe, delegatable cleanup plan. Analyzes only; never deletes. Bundled scan scripts.
 
-Bundled deterministic scans:
-- `scripts/scan-orphans.sh` — source files referenced nowhere (with cascade re-scan).
-- `scripts/scan-deps.sh` — declared-but-unused dependencies (filters build-plugin false positives).
-- `scripts/scan-assets.sh` — assets imported nowhere, biggest first.
+- **[workbench-staging](workbench-staging/)** — Iterate risky changes in a throwaway, git-ignored workbench, verify them there, and copy only the finished result into the real source before committing.
 
-See [`feature-cleanup/EXAMPLE.md`](feature-cleanup/EXAMPLE.md) for a real worked run.
+## Use
 
-### [`delegated-engineering`](delegated-engineering/)
-An operating model for running engineering work as a strong **primary** agent that plans + verifies, with **delegate** agents that execute. Three parts: the plan-and-delegate division of labor, how to write a self-contained delegation kickoff, and how to independently verify a delegate's work — never trusting the "all green" self-report.
-
-**Use it when** deciding who does what, handing a task to a sub-agent, or checking a result before you trust or merge it.
-
-## Install
+Copy a skill folder into your agent's skills directory:
 
 ```bash
-# clone, then symlink or copy a skill into your project (or ~/.claude/skills for global use)
-cp -R feature-cleanup /path/to/your-project/.claude/skills/
+cp -R feature-cleanup /path/to/project/.claude/skills/
 ```
 
 ## License
 
-[MIT](LICENSE) © Raya Surya
+MIT
