@@ -10,6 +10,8 @@ Reusable workflows an AI coding agent loads on demand. Each folder has a `SKILL.
 
 - **[workbench-staging](workbench-staging/)** — Iterate risky changes in a throwaway, git-ignored workbench, verify them there, and copy only the finished result into the real source before committing.
 
+- **[deaify](deaify/)** — A living rulebook of UI patterns that read as AI-generated or templated, each paired with the approved alternative. Apply when building or reviewing UI; it grows as new patterns get flagged.
+
 ## Use
 
 Copy a skill folder into your agent's skills directory:
