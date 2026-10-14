@@ -12,6 +12,8 @@ Reusable workflows an AI coding agent loads on demand. Each folder has a `SKILL.
 
 - **[deaify](deaify/)** — A living rulebook of UI patterns that read as AI-generated or templated, each paired with the approved alternative. Apply when building or reviewing UI; it grows as new patterns get flagged.
 
+- **[scroll-taste](scroll-taste/)**: Rules for scroll-driven pages and animated case studies that people can actually read. One swipe, one stop; changes that play on a timer instead of flying past with the scroll; card rails, diagrams over paragraphs, real product screens, captions where the eye is, and a self-review pass that screenshots every stop. Includes the code patterns and review scripts.
+
 ## Use
 
 Copy a skill folder into your agent's skills directory:
