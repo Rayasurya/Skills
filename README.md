@@ -14,6 +14,8 @@ Reusable workflows an AI coding agent loads on demand. Each folder has a `SKILL.
 
 - **[scroll-taste](scroll-taste/)**: Rules for scroll-driven pages and animated case studies that people can actually read. One swipe, one stop; changes that play on a timer instead of flying past with the scroll; card rails, diagrams over paragraphs, real product screens, captions where the eye is, and a self-review pass that screenshots every stop. Includes the code patterns and review scripts.
 
+- **[swipe-story](swipe-story/)**: Build scroll-driven story pages people can read. One swipe moves to one stop, changes play on a timer instead of being scrubbed by scroll, diagrams carry the argument, and every screen and number comes from the real product. Ships its own scroll engine, page controller, starter template, rules with their reasons, and review scripts that screenshot every stop and check provenance and accessibility.
+
 ## Use
 
 Copy a skill folder into your agent's skills directory:

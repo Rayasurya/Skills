@@ -1,0 +1,65 @@
+/* =============================================================================
+   page.css: this build's own look. Override story.css tokens with the
+   product's real colours and type, then style the page's sections.
+   ========================================================================== */
+:root {
+  /* --accent: [the product's action colour]; */
+  /* --font-text: "[product typeface]", ui-sans-serif, system-ui, sans-serif; */
+}
+
+/* Placeholder screen; replace with real captures. */
+.demo-screen { display: grid; place-items: center; width: 100%; height: 100%; min-height: 12rem; border-radius: 12px; background: var(--tint); color: var(--muted); font-family: var(--font-mono); font-size: 0.875rem; }
+
+/* 01 hero */
+.hero__in { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.hero__copy { display: grid; gap: 1.2rem; }
+.hero__idea { font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); line-height: 1.32; font-weight: 600; letter-spacing: -0.02em; max-width: 26ch; }
+.hero__fig { aspect-ratio: 16 / 10; }
+.hero[data-stage="1"] .hint { opacity: 0; }
+
+/* 02 signature */
+.sig__in { display: grid; gap: clamp(1.5rem, 3vh, 2.4rem); justify-items: center; text-align: center; }
+.steps3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; width: 100%; max-width: 56rem; }
+.step { display: grid; gap: 0.6rem; justify-items: center; padding: 1.6rem 1rem; border-radius: var(--r); background: var(--surface); box-shadow: 0 0 0 1px var(--line); transition: background 600ms var(--ease), box-shadow 600ms var(--ease); }
+.step .n { width: 2.2rem; height: 2.2rem; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: var(--tint); color: var(--muted); transition: background 600ms var(--ease), color 600ms var(--ease); }
+.step.lit { background: var(--accent-tint); box-shadow: 0 0 0 1.5px var(--accent); }
+.step.lit .n { background: var(--accent); color: var(--accent-ink); }
+.sig__bubble { width: min(100%, 34rem); text-align: left; }
+
+/* 03 rail cards */
+.card { width: min(22rem, 78vw); display: grid; gap: 0.6rem; align-content: start; padding: 1.2rem 1.3rem 1.4rem; border-radius: 18px; background: var(--surface); box-shadow: 0 0 0 1px var(--line); }
+.card__pic { height: 8rem; border-radius: 12px; background: var(--tint); display: grid; place-items: center; color: var(--muted); font-size: 0.875rem; }
+.card h3 { font-size: 1.1875rem; line-height: 1.3; }
+.card p { color: var(--ink-soft); }
+
+/* 04 arrival diagram */
+.flowdiag { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.2rem; }
+.flowdiag li { position: relative; display: grid; gap: 0.3rem; padding: 1.2rem; border-radius: var(--r); background: var(--surface); box-shadow: 0 0 0 1px var(--line); opacity: 0; translate: 0 10px; transition: opacity 500ms var(--ease), translate 500ms var(--ease); }
+.flowdiag li:not(:last-child)::after { content: ""; position: absolute; right: -1.9rem; top: 50%; width: 1.6rem; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 400ms var(--ease); }
+.flowdiag.on li { opacity: 1; translate: none; }
+.flowdiag.on li::after { transform: none; }
+.flowdiag.on li:nth-child(2) { transition-delay: 700ms; } .flowdiag.on li:nth-child(1)::after { transition-delay: 450ms; }
+.flowdiag.on li:nth-child(3) { transition-delay: 1400ms; } .flowdiag.on li:nth-child(2)::after { transition-delay: 1150ms; }
+.flowdiag span { color: var(--ink-soft); }
+
+/* 05 bench */
+.bench__in { display: grid; gap: 1.2rem; justify-items: center; }
+.bench__win { width: min(100%, calc((100svh - 52px - 16rem) * 1.6)); }
+.bench__view { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--tint); }
+.shot { position: absolute; inset: 0; opacity: 0; transition: opacity 520ms var(--ease); }
+.shot.on { opacity: 1; }
+.shot > * { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; transform-origin: 0 0; transition: transform 1.15s cubic-bezier(0.45, 0, 0.2, 1); }
+.bench__bubble { margin-top: -1.6rem; z-index: 3; width: min(92%, 38rem); transition: opacity 360ms var(--ease), translate 420ms var(--ease); }
+.bench__bubble.fade { opacity: 0; translate: 0 6px; }
+
+@media (max-width: 860px) {
+  .hero__in, .steps3, .flowdiag { grid-template-columns: minmax(0, 1fr); }
+  .flowdiag { gap: 1.2rem; }
+  .flowdiag li:not(:last-child)::after { right: auto; left: 1.4rem; top: auto; bottom: -1.05rem; width: 2px; height: 0.9rem; transform: scaleY(0); transform-origin: top; }
+  .bench__win { width: 100%; }
+  .bench__bubble { margin-top: 0.8rem; width: 100%; }
+}
+.rm .flowdiag li { opacity: 1; translate: none; }
+.rm .shot { position: relative; opacity: 1; margin-bottom: 1rem; }
+.rm .bench__view { aspect-ratio: auto; overflow: visible; }
+.rm .shot > * { position: relative; }

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>[Product] · [what it does, in a few words]</title>
+<meta name="description" content="[One sentence: what the product is and who it is for.]">
+<!-- Use the product's own typeface. Load it here and set --font-text in page.css. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232557d6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="story.css">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+
+<!-- ============================== THE CHAPTER BAR ============================== -->
+<header class="folio" id="folio">
+  <a class="fback" href="/portfolio"><span><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Portfolio</b></span></a>
+  <a class="fm" href="#ch-01"><span class="fm__logo" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></span>[Product]</a>
+  <span class="fc" id="folioNow"><b>01</b>Overview</span>
+  <button type="button" class="fidx" id="folioBtn" aria-controls="sheet" aria-expanded="false"><span>Index</span></button>
+  <i class="fbar" id="folioBar"></i>
+</header>
+<div class="sheet" id="sheet" aria-hidden="true" inert>
+  <div class="scrim" data-close></div>
+  <div class="panel" role="dialog" aria-label="Chapters">
+    <div class="grab"></div>
+    <div class="sp-head"><div class="meter"><i id="sheetMeter"></i></div><p id="sheetCount"></p></div>
+    <nav aria-label="Chapters"><ol id="sheetList"></ol></nav>
+  </div>
+</div>
+
+<main>
+
+<!-- ============================== 01 HERO ==============================
+     Pinned, 2 stops. Stop 1: what it is. Stop 2: the one idea it rests on.
+     The first screen says what to do. -->
+<section id="ch-01" class="ch hero stagegrid" data-act="pin" data-span="1.8" data-chapter="01" data-chapter-title="Overview">
+  <div data-stage>
+    <div class="wrap hero__in">
+      <div class="hero__copy">
+        <p class="eyebrow">[Type of work] · [domain]</p>
+        <h1 class="t-h1">[A plain statement of what the product does]</h1>
+        <div class="swap" id="heroSwap">
+          <p class="t-lede" data-st="0">[One sentence: who it is for and the job it does.]</p>
+          <p class="hero__idea" data-st="1">[The one idea the whole design rests on.]</p>
+        </div>
+      </div>
+      <figure class="hero__fig" id="heroFig" aria-label="[What the picture shows]">
+        <!-- The product's own screen or the story's recurring diagram. -->
+        <div class="demo-screen">[Product screen]</div>
+      </figure>
+    </div>
+    <div class="hint"><span class="hint__wheel" aria-hidden="true"><i></i></span><span>Scroll to begin</span></div>
+  </div>
+</section>
+
+<!-- Facts and an honesty note: a short flow section that fills the screen. -->
+<section class="ch solo">
+  <div class="wrap" data-block>
+    <dl class="facts" data-in data-stagger="70">
+      <div><dt>Role</dt><dd>[Role]</dd></div>
+      <div><dt>Timeline</dt><dd>[As the history shows]</dd></div>
+      <div><dt>Status</dt><dd>[Concept, prototype, live]</dd></div>
+      <div><dt>Focus</dt><dd>[Focus]</dd></div>
+    </dl>
+    <p class="note" data-in style="margin-top:1.4rem"><b>[Simulated / concept / projected.]</b> [Say plainly what is not real.]</p>
+  </div>
+</section>
+
+<!-- ============================== 02 THE SIGNATURE ==============================
+     Pinned, 3 stops. Scroll picks the stage; the diagram changes on a clock.
+     The caption sits on the diagram as a bubble. -->
+<section id="ch-02" class="ch sig stagegrid" data-act="pin" data-span="2.5" data-chapter="02" data-chapter-title="[Signature]">
+  <div data-stage>
+    <div class="wrap sig__in">
+      <h2 class="t-h2">[The idea, shown rather than told]</h2>
+      <figure class="steps3" id="sigSteps" aria-label="[What the diagram shows]">
+        <div class="step"><span class="n">1</span><b>[Step one]</b></div>
+        <div class="step"><span class="n">2</span><b>[Step two]</b></div>
+        <div class="step"><span class="n">3</span><b>[Step three]</b></div>
+      </figure>
+      <div class="bubble sig__bubble" aria-live="polite">
+        <div class="swap" id="sigSwap">
+          <div data-st="0"><span class="t-label">Stage 1</span><p>[What changed, in one line.]</p></div>
+          <div data-st="1"><span class="t-label">Stage 2</span><p>[What changed, in one line.]</p></div>
+          <div data-st="2"><span class="t-label">Stage 3</span><p>[What changed, in one line.]</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 03 A RAIL ==============================
+     A row of cards wider than the screen moves sideways, one card per swipe. -->
+<section id="ch-03" class="ch rail" data-act="pin" data-span="2" data-chapter="03" data-chapter-title="[Findings]">
+  <div data-stage>
+    <div class="rail__in">
+      <div class="wrap"><div class="head" style="margin-bottom:0"><h2 class="t-h2">[Five things the research showed]</h2></div></div>
+      <div class="rail__row">
+        <div class="rail__track" aria-label="[Cards]">
+          <article class="card"><div class="card__pic">[A small drawing]</div><h3>[Finding 1]</h3><p>[One line.]</p></article>
+          <article class="card"><div class="card__pic">[A small drawing]</div><h3>[Finding 2]</h3><p>[One line.]</p></article>
+          <article class="card"><div class="card__pic">[A small drawing]</div><h3>[Finding 3]</h3><p>[One line.]</p></article>
+          <article class="card"><div class="card__pic">[A small drawing]</div><h3>[Finding 4]</h3><p>[One line.]</p></article>
+          <article class="card"><div class="card__pic">[A small drawing]</div><h3>[Finding 5]</h3><p>[One line.]</p></article>
+        </div>
+        <div class="wrap rail__nav"><button type="button" class="paddle" data-dir="-1" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" class="paddle" data-dir="1" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 04 A FLOW SECTION ==============================
+     A diagram that plays once on arrival, then a "+" tile for the long list. -->
+<section id="ch-04" class="ch solo" data-chapter="04" data-chapter-title="[Decisions]">
+  <div class="wrap">
+    <div class="head" data-in data-stagger="60">
+      <h2 class="t-h2">[A plain statement of the decision]</h2>
+      <p class="t-lede">[One line of context.]</p>
+    </div>
+    <ol class="flowdiag" data-arrive="0.5" data-block>
+      <li><b>[Input]</b><span>[detail]</span></li>
+      <li><b>[Rule]</b><span>[detail]</span></li>
+      <li><b>[Outcome]</b><span>[detail]</span></li>
+    </ol>
+    <div class="more" data-more>
+      <button type="button" class="more__btn" aria-expanded="false" aria-controls="moreAll"><span class="more__text"><b>[All N decisions]</b><span>[Say exactly what is inside.]</span></span><span class="more__icon" aria-hidden="true"></span></button>
+      <div class="more__panel" id="moreAll" inert><div class="more__inner"><p class="t-body">[The full list.]</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 05 THE SCREENS ==============================
+     One stop per screen. Real screens captured from the running product. The
+     camera eases to the part the caption names; the caption is a bubble. -->
+<section id="ch-05" class="ch bench stagegrid" data-act="pin" data-span="2.6" data-no-nudge data-chapter="05" data-chapter-title="The product">
+  <div data-stage>
+    <div class="wrap bench__in">
+      <h2 class="t-h2">The product, screen by screen</h2>
+      <div class="browser bench__win">
+        <div class="browser__bar" aria-hidden="true"><span class="tl"><i></i><i></i><i></i></span><span class="browser__url">[product.url]</span><span class="tl ghost"><i></i><i></i><i></i></span></div>
+        <div class="bench__view" id="benchView"></div>
+      </div>
+      <div class="bubble bench__bubble" aria-live="polite"><span class="t-label" id="benchKicker"></span><p id="benchLine"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 06 CLOSE ============================== -->
+<section id="ch-06" class="ch close" data-chapter="06" data-chapter-title="Up next">
+  <div class="close__stage">
+    <div class="wrap cl__in">
+      <p class="t-label" id="readCount"></p>
+      <p class="big">[A closing line in the writer's own words.]</p>
+      <p class="cl__next">Up next: <a href="#">[Project]</a>, <a href="#">[Project]</a>, or <a href="/portfolio">all projects</a>.</p>
+      <footer class="cl__foot"><span>[Product] case study · [Name]</span><span>[What is concept or simulated.]</span></footer>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="nudge" id="nudge" role="status"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Keep scrolling</div>
+<div class="lb" id="lb" aria-hidden="true" inert><figure id="lbFig"><figcaption><span id="lbCap"></span><button type="button" id="lbClose">Close</button></figcaption></figure></div>
+
+<script src="lenis.min.js"></script>
+<script src="stage.js"></script>
+<script src="story.js"></script>
+<script src="scenes.js"></script>
+</body>
+</html>
